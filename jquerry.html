@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>jquery</title>
+    <style type="text/css">
+        body {
+            background-color: rgb(15, 134, 170);
+            margin: 50px;
+            margin-top: 70px;
+            text-align: center;
+            color: white;
+            font-size: medium;
+        }
+        
+        .intro {
+            font-size: 250%;
+            color: blue;
+        }
+        
+        .botones {
+            border: 1px solid black;
+            background-color: lightblue;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Trabajo Jquery</h1>
+    <p> Este es el primer texto para pruebas</p>
+    <p class="text2"> Este es el segundo texto para pruebas</p>
+    <p>Hobby: <input type="text" name="ocio"></p>
+    <img class="foto" src=nuevafoto.jpg alt="carlita" width="100" height="133"><br>
+    <ul>
+        <li class="botones"><button class="boton1"> Pincha aqui para desaparecer el texto anterior(hide)</button></li>
+        <li class="botones"><button class="show">Pincha aqui para hacer aparecer nuevamente el texto(show)</button></li>
+        <li class="botones"><button class="boton2"> Quieres diagramas T en 3D(click)</button></li>
+        <li class="botones"><button class="boton3"> Pincha aqui para hacer desaparecer y aparecer el texto(toggle)</button></li>
+        <li class="botones"><button class="boton4">Slide up</button></li>
+        <li class="botones"><button class="boton5">Slide down</button></li>
+        <li class="botones"><button class="boton6">toggle.slide</button></li>
+        <li class="botones"><button class="boton7">fade out</button></li>
+        <li class="botones"><button class="boton8">fade in</button></li>
+        <li class="botones"><button class="boton9">Add class</button></li>
+        <li class="botones"><button class="boton10">insertar texto before</button></li>
+        <li class="botones"><button class="boton11">insertar texto after</button></li>
+        <li class="botones"><button class="boton12">texto insertado con append</button></li>
+        <li class="botones"><button class="boton13">funcion html</button></li>
+        <li class="botones"><button class="boton14">cambiar tamaño imagen</button></li>
+        <li class="botones"><button class="boton15">asignar hobby</button></li>
+        <li class="botones"><button class="boton16"> metodo text jquery</button></li>
+    </ul>
+    <script>
+        $(document).ready(function() {});
+        $('.boton2').click(function() {
+            alert("¡¡Camilo es la solucion!!");
+        });
+        $(".boton1").click(function() {
+            $("p").hide();
+        });
+        $(".show").click(function() {
+            $("p").show();
+        });
+        $(".boton3").click(function() {
+            $("p").toggle(1000, function() {
+                alert("Toggle ejecutado");
+            });
+        });
+        $(".boton4").click(function() {
+            $("p").slideUp();
+        });
+        $(".boton5").click(function() {
+            $("p").slideDown();
+        });
+        $(".boton6").click(function() {
+            $("p").slideToggle();
+        });
+        $(".boton7").click(function() {
+            $("p").fadeOut();
+        });
+        $(".boton8").click(function() {
+            $("p").fadeIn();
+        });
+        $(".boton9").click(function() {
+            $(".text2").addClass("intro");
+        });
+        $(".boton10").click(function() {
+            $(".text2").before("<p>Soy el nuevo texto insertado con before</p>");
+        });
+        $(".boton11").click(function() {
+            $("p").after("<p>Soy el nuevo texto insertado con after</p>");
+        });
+        $(".boton12").click(function() {
+            $("p").append(" <b>soy el texto insertado con append</b>.");
+        });
+        $(".boton13").click(function() {
+            $(".text2").html("que tal <b>he cambiado!</b>");
+        });
+        $(".boton14").click(function() {
+            $(".foto").attr("width", "200");
+        });
+        $(".boton15").click(function() {
+            $("input:text").val("Airsoft");
+        });
+        $(".boton16").click(function() {
+            $("p").text("cambiado por atributo text de jquery");
+        });
+    </script>
+</body>
+
+</html>
